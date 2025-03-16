@@ -3,9 +3,9 @@ package filas;
 import java.util.Scanner;
 
 public class App {
+    private static Elemento raiz = null;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Elemento raiz = null;
         int opt = 0;
         while(opt != 9){
             System.out.println(
@@ -17,21 +17,26 @@ public class App {
             opt = sc.nextInt();
             switch (opt){
                 case 1:
-                    inserirElemento(0);
+                    System.out.println("Insira um valor (apenas inteiros)");
+                    inserirElemento(raiz, sc.nextInt());
                 case 2:
                     imprimirLista(raiz);
             }
         }
     }
-    public static void inserirElemento(int valor) {
+    public static void inserirElemento(Elemento e, int valor) {
+        if(raiz == null){
+            raiz = new Elemento(valor);
+        } else {
 
+        }
     }
     public static void imprimirLista(Elemento raiz){
         if(raiz != null)//o elemento inicial da lista precisa ser diferente de nulo
         {
-
+            System.out.print(" "+raiz.getValor());
         } else {
-            System.out.println("A fila está vazia, insira elementos primeiro!\n");
+            System.out.println("fim da lista\n");
         }
     }
 }
