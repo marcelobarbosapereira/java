@@ -32,6 +32,7 @@ public class App {
         }
     }
     public static void imprimirLista(Elemento raiz){
+        System.out.println();
         if(raiz != null)//o elemento inicial da lista precisa ser diferente de nulo
         {
             System.out.print(" "+raiz.getValor());
